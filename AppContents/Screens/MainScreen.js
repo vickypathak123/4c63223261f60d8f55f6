@@ -46,11 +46,13 @@ const MainScreen = ({ navigation }) => {
         })
             .then((response) => response.json())
             .then((JsonResponse) => {
-                let array = JsonResponse.hits;
+                //let array = JsonResponse.hits;
+                var arr3 = IsResponseList.concat(JsonResponse.hits)
+                console.log("GetTheresult", arr3)
+                //const interest = [...IsResponseList, ...JsonResponse.hits];
 
-                const interest = [...IsResponseList, ...JsonResponse.hits];
 
-                SetResponseList(interest)
+                SetResponseList(arr3)
             })
             .catch((error) => {
                 console.log("GetTheError", error)
@@ -59,6 +61,7 @@ const MainScreen = ({ navigation }) => {
     }
 
     useEffect(() => {
+        console.log
         if (IsResponseList.length > 0) {
 
         }
